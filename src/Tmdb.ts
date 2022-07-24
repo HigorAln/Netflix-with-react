@@ -1,5 +1,5 @@
-const API_key = '38c007f28d5b66f36b9c3cf8d8452a4b';
-const API_base = 'https://api.themoviedb.org/3';
+const API_key = process.env.REACT_APP_API_KEY;
+const API_base = process.env.REACT_APP_API_BASE;
 
 const basicFetch = async (endpoint) => {
   const req = await fetch(`${API_base}${endpoint}`);
@@ -67,7 +67,7 @@ export default {
     },
   ],
   getMovieInfo: async (movieId, type) => {
-    let info = {};
+    let info: any = {};
 
     if (movieId) {
       switch (type) {

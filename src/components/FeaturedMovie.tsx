@@ -3,7 +3,7 @@ import './FeaturedMovie.css';
 
 export default ({ item }) => {
   const firstDate = new Date(item.first_air_date);
-  const genres = [];
+  const genres: any = [];
   for (const i in item.genres) {
     genres.push(item.genres[i].name);
   }

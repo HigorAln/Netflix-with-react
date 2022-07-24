@@ -6,7 +6,7 @@ import FeaturedMovie from './components/FeaturedMovie';
 import Header from './components/Header';
 
 function App() {
-  const [movieList, setMovieList] = useState([]);
+  const [movieList, setMovieList] = useState<any>([]);
   const [featureData, setFeatureData] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
 
@@ -51,7 +51,7 @@ function App() {
       {featureData && <FeaturedMovie item={featureData} />}
 
       <section className="lists">
-        {movieList.map((item, key) => (
+        {movieList.map((item: any, key) => (
           <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
